@@ -1,0 +1,85 @@
+main {
+  background-color: rgb(0, 0, 0);
+  padding: 20px;
+  text-align: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+h1,
+p,
+h2 {
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card_upper {
+  height: 150px;
+  width: 400px;
+  margin: 25px;
+  align-items: center;
+  background-color: rgb(116, 116, 209);
+}
+
+.card_upper_recovered {
+  height: 150px;
+  width: 400px;
+  margin: 25px;
+  align-items: center;
+  background-color: rgb(43, 180, 30);
+}
+
+.card_upper_confirmed {
+  height: 150px;
+  width: 400px;
+  margin: 25px;
+  align-items: center;
+  background-color: rgb(174, 177, 35);
+}
+
+.card_upper_death {
+  height: 150px;
+  width: 400px;
+  margin: 25px;
+  align-items: center;
+  background-color: rgb(235, 69, 40);
+}
+
+.card_upper_active {
+  height: 150px;
+  width: 400px;
+  margin: 25px;
+  align-items: center;
+  background-color: rgb(103, 72, 187);
+}
+
+.card_upper_update {
+  height: 150px;
+  width: 400px;
+  margin: 25px;
+  align-items: center;
+  background-color: rgb(153, 98, 46);
+}
+
+.card_section {
+  font-size: 32px;
+  margin-top: 20px;
+  line-height: 0.9;
+  font-weight: bold;
+}
+
+.card_section span {
+  font-size: 15px;
+}
+
+.card_total {
+  font-size: 20px;
+  font-weight: bold;
+}
