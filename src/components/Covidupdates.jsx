@@ -5,21 +5,23 @@ const Covidupdates = () => {
 
   const [data, setData] = useState([])
 
+  useEffect(() => {
+    getcovidupdates();
+  }, []);
+
+
   const getcovidupdates = async () => {
-    const url = `https://data.covid19india.org/data.json`
+    const url = `https://api.covid19api.com/summary`
     try {
       const res = await fetch(url);
       const data = await res.json();
-      console.log(data.statewise[0]);
-      setData(data.statewise[0]);
+      const updatedData = await data.Countries[76];
+      setData(updatedData);
     } catch (error) {
       console.error(error);
     }
   };
 
-  useEffect(() => {
-    getcovidupdates();
-  }, []);
 
   return (
     <>
@@ -31,23 +33,23 @@ const Covidupdates = () => {
             <div className="card_upper">
               <div className="card_inner">
                 <p className="card_section"> <span>OUR</span> COUNTRY </p>
-                <p className="card_total card_small">INDIA</p>
+                <p className="card_total card_small">{data.Country}</p>
               </div>
             </div>
           </li>
           <li className="card">
             <div className="card_upper_recovered">
               <div className="card_inner">
-                <p className="card_section"> <span>TOTAL</span> RECOVERED </p>
-                <p className="card_total card_small">{data.recovered}</p>
+                <p className="card_section"> <span>TOTAL</span> CONFIRMED </p>
+                <p className="card_total card_small">{data.TotalConfirmed}</p>
               </div>
             </div>
           </li>
           <li className="card">
             <div className="card_upper_confirmed">
               <div className="card_inner">
-                <p className="card_section"> <span>TOTAL</span> CONFIRMED </p>
-                <p className="card_total card_small">{data.confirmed}</p>
+                <p className="card_section"> <span>NEW</span> CONFIRMED </p>
+                <p className="card_total card_small">{data.NewConfirmed}</p>
               </div>
             </div>
           </li>
@@ -55,15 +57,15 @@ const Covidupdates = () => {
             <div className="card_upper_death">
               <div className="card_inner">
                 <p className="card_section"> <span>TOTAL</span> DEATHS </p>
-                <p className="card_total card_small">{data.deaths}</p>
+                <p className="card_total card_small">{data.TotalDeaths}</p>
               </div>
             </div>
           </li>
           <li className="card">
             <div className="card_upper_active">
               <div className="card_inner">
-                <p className="card_section"> <span>TOTAL</span> ACTIVE </p>
-                <p className="card_total card_small">{data.active}</p>
+                <p className="card_section"> <span>NEW</span> DEATHS </p>
+                <p className="card_total card_small">{data.NewDeaths}</p>
               </div>
             </div>
           </li>
@@ -71,7 +73,7 @@ const Covidupdates = () => {
             <div className="card_upper_update">
               <div className="card_inner">
                 <p className="card_section"> <span>LAST</span> UPDATE AT </p>
-                <p className="card_total card_small">{data.lastupdatedtime}</p>
+                <p className="card_total card_small">{data.Date}</p>
               </div>
             </div>
           </li>

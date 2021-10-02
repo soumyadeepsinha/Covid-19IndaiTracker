@@ -1,14 +1,16 @@
 main {
   background-color: rgb(0, 0, 0);
-  padding: 20px;
+  padding: 0;
   text-align: center;
-  min-height: 100vh;
+  height: 97vh;
+  overflow: hidden;
   align-items: center;
 }
 
 h1,
 p,
 h2 {
+  margin-top: 20px;
   color: white;
 }
 
@@ -33,7 +35,7 @@ ul {
   width: 400px;
   margin: 25px;
   align-items: center;
-  background-color: rgb(43, 180, 30);
+  background-color: rgb(119, 18, 48);
 }
 
 .card_upper_confirmed {
@@ -49,7 +51,7 @@ ul {
   width: 400px;
   margin: 25px;
   align-items: center;
-  background-color: rgb(235, 69, 40);
+  background-color: rgb(224, 31, 5);
 }
 
 .card_upper_active {
@@ -57,7 +59,7 @@ ul {
   width: 400px;
   margin: 25px;
   align-items: center;
-  background-color: rgb(103, 72, 187);
+  background-color: rgb(235, 69, 40);
 }
 
 .card_upper_update {
